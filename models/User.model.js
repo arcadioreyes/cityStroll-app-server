@@ -14,9 +14,18 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Password is required."],
     },
-    name: {
+    country: {
       type: String,
-      required: [true, "Name is required."],
+    },
+    city: {
+      type: String,
+    },
+    languages: {
+      type: [String],
+      enum: ["English", "French", "Spanish"],
+    },
+    image: {
+      type: String,
     },
   },
   {
