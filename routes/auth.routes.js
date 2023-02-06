@@ -95,6 +95,7 @@ router.post("/login", (req, res, next) => {
   }
 
   // Check the users collection if a user with the same email exists
+
   User.findOne({ email })
     .then((foundUser) => {
       if (!foundUser) {
@@ -111,6 +112,7 @@ router.post("/login", (req, res, next) => {
         const { _id, email, username, country, city, profilePicture } =
           foundUser;
 
+        // last minutes of the recording: authentication token
         // Create an object that will be set as the token payload
         const payload = { _id, email, username, country, city, profilePicture };
 
