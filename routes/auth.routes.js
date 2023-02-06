@@ -23,7 +23,7 @@ const saltRounds = 10;
 router.post("/signup", (req, res, next) => {
   const { email, username, password, country, city, profilePicture } = req.body;
 
-  // Check if email or password or name are provided as empty strings
+  // Check if email or password or username are provided as empty strings
   if (email === "" || password === "" || username === "") {
     res.status(400).json({ message: "Provide email, password and username" });
     return;
@@ -108,10 +108,11 @@ router.post("/login", (req, res, next) => {
 
       if (passwordCorrect) {
         // Deconstruct the user object to omit the password
-        const { _id, email, name } = foundUser;
+        const { _id, email, username, country, city, profilePicture } =
+          foundUser;
 
         // Create an object that will be set as the token payload
-        const payload = { _id, email, name };
+        const payload = { _id, email, username, country, city, profilePicture };
 
         // Create a JSON Web Token and sign it
         const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
