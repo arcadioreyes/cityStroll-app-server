@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
+// Esto es un Test de Axel
 const userSchema = new Schema(
   {
     email: {
@@ -10,13 +11,27 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true,
     },
+    username: {
+      type: String,
+      required: [true, "Username is required."],
+      unique: true,
+    },
     password: {
       type: String,
       required: [true, "Password is required."],
     },
-    name: {
+    country: {
       type: String,
-      required: [true, "Name is required."],
+      lowercase: true,
+      trim: true,
+    },
+    city: {
+      type: String,
+      lowercase: true,
+      trim: true,
+    },
+    profilePicture: {
+      type: String,
     },
   },
   {
