@@ -24,7 +24,7 @@ const userSchema = new Schema(
       type: [String],
       enum: ["English", "French", "Spanish"],
     },
-    image: {
+    profilePicture: {
       type: String,
     },
   },
