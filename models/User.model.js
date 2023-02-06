@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
+// Esto es un Test de Axel
 const userSchema = new Schema(
   {
     email: {
