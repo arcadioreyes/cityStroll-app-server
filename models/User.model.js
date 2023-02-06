@@ -19,16 +19,15 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Password is required."],
     },
-
     country: {
       type: String,
+      lowercase: true,
+      trim: true,
     },
     city: {
       type: String,
-    },
-    languages: {
-      type: [String],
-      enum: ["English", "French", "Spanish"],
+      lowercase: true,
+      trim: true,
     },
     profilePicture: {
       type: String,
